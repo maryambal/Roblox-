@@ -1,0 +1,26 @@
+function handleLogin(event) {
+  event.preventDefault(); // Prevent page reload
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const message = document.getElementById('login-message');
+
+  // Fake credentials
+  const validUsername = 'testuser';
+  const validPassword = '1234';
+
+  if (username === validUsername && password === validPassword) {
+    message.textContent = 'Login successful! Redirecting...';
+    message.style.color = 'green';
+
+    // Simulate redirect
+    setTimeout(() => {
+      window.location.href = 'dashboard.html'; // You can create this page too
+    }, 1500);
+  } else {
+    message.textContent = 'Incorrect username or password.';
+    message.style.color = 'red';
+  }
+
+  return false;
+}
